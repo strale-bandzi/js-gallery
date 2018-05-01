@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA Compatible" content="ie=edge"> 
+        <title>Flex Gallery</title>
+        
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
+        
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    
+    <body>
+        <div class="panels">
+            <div class="panel panel1">
+                <p>Hear</p>
+                <p>Norway</p>
+                <p>Sound</p>
+            </div>
+            <div class="panel panel2">
+                <p>Enjoy</p>
+                <p>Serbia</p>
+                <p>Spirit</p>
+            </div>
+            <div class="panel panel3">
+                <p>Feel</p>
+                <p>India</p>
+                <p>Magic</p>
+            </div>
+            <div class="panel panel4">
+                <p>Breath</p>
+                <p>Finland</p>
+                <p>Here</p>
+            </div>
+            <div class="panel panel5">
+                <p>The</p>
+                <p>Australia</p>
+                <p>Call</p>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            var panels = document.querySelectorAll('.panel');
+            
+            function toggleOpen(){
+                    this.classList.toggle('open');
+                }
+
+            function toggleActive(e){
+                if(e.propertyName.includes('flex')){
+                    this.classList.toggle('open-active');
+                }
+            }
+
+            panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+            panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+        </script>
+    </body>
+</html>
